@@ -24,14 +24,23 @@ do {
     k++;
 } while (k < 5);
 
-// For...in loop
+// For...in loop is used to iterate over the properties of an object
+// Example of using a for...in loop to iterate over an object
 var person = { fname: "John", lname: "Doe", age: 25 };
 for (var key in person) {
     console.log(key + ": " + person[key]);
 }
 
-// For...of loop
+// For...of loop is used to iterate over iterable objects like arrays, strings, etc.
+// Example of using a for...of loop to iterate over an array
 var colors = ["red", "green", "blue"];
 for (var color of colors) {
     console.log(color);
+}
+
+
+//Example of using a for loop to iterate over an array
+var fruits = ["apple", "banana", "cherry"];
+for (var i = 0; i < fruits.length; i++) {
+    console.log("Fruit: " + fruits[i]);
 }
