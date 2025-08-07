@@ -1,0 +1,32 @@
+<!-- 
+ using html css and js to create a age with a button in the middle , once button clicked the backgrpund pf page changes every 3 seconds. 
+and the button color changes only once to random color
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+    <button id="changeColorButton" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Change Background Color</button>
+</body>
+<script>
+    var colorList = ["red", "blue", "green", "yellow", "purple", "orange"];
+    var buttonClicked = false;
+    var currentIndex = 0;
+    var intervalId;
+    var button = document.getElementById("changeColorButton");
+    button.addEventListener("click", function() {
+        if (!buttonClicked) {
+            buttonClicked = true;
+            // Change button color to a random color
+            var randomColor = colorList[Math.floor(Math.random() * colorList.length)];
+            button.style.backgroundColor = randomColor;
+
+            // Start changing the background color every 3 seconds
+            intervalId = setInterval(function() {
+                document.body.style.backgroundColor = colorList[currentIndex];
+                currentIndex = (currentIndex + 1) % colorList.length;
+            }, 3000);
+        }
+    });
+</script>
+</html>
