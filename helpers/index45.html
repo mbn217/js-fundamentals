@@ -1,0 +1,42 @@
+<!-- 
+ using html css and js to create a age with a button in the middle , once button clicked the backgrpund pf page changes every 3 seconds. 
+and the button color changes only once to random color
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+    <!-- Create an html table to display the students' data and dynalmically from the students array -->
+    <table id="studentsTable" border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Date of Birth</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody id="studentsBody">
+            <!-- Read the rows from students array and display them here -->
+            <script>
+                let students = [
+                        { name: "Alice", age: 20 , dob: "2003-01-01", grade: "A"},
+                        { name: "Bob", age: 22, dob: "2001-02-02", grade: "B" },
+                        { name: "Charlie", age: 23, dob: "2000-03-03", grade: "C" }
+                    ];
+                let studentsBody = document.getElementById("studentsBody");
+                students.forEach(student => {
+                    let row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${student.name}</td>
+                        <td>${student.age}</td>
+                        <td>${student.dob}</td>
+                        <td>${student.grade}</td>
+                    `;
+                    studentsBody.appendChild(row);
+                });
+            </script>
+        </tbody>
+</body>
+
+</html>
