@@ -1,0 +1,37 @@
+<!-- 
+ using html css and js to create a age with a button in the middle , once button clicked the backgrpund pf page changes every 3 seconds. 
+and the button color changes only once to random color
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+</body>
+<script>
+    var arr  =["10","20","30","40","50"];
+    //Using for loop to create new array with 10 times the values of arr
+    var newArr = [];
+    for (var i = 0; i < arr.length; i++) {
+        newArr.push(arr[i] * 10);
+    }
+    //Using map to create new array with 10 times the values of arr
+    var mapArr = arr.map(function(value) {
+        return value * 10;
+    });
+    console.log(newArr); // [100, 200, 300, 400, 500]
+    console.log(mapArr); // [100, 200, 300, 400, 500]
+
+    //filter only the values greater than 30
+    var filteredArr = arr.filter(function(value) {
+        return value > 30;
+    });
+    console.log(filteredArr); // [40, 50]
+
+    //Use reduce to sum all the values in arr
+    var sum = arr.reduce(function(previousValue, currentValue) {
+        return previousValue + parseInt(currentValue);
+    }, 0);
+    console.log(sum); // 150
+
+</script>
+</html>
